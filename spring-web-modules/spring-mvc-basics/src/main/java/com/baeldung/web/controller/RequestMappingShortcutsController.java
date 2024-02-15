@@ -19,9 +19,9 @@ public class RequestMappingShortcutsController {
         return new ResponseEntity<String>("GET Response", HttpStatus.OK);
     }
 
-    @GetMapping("/get/{id}")
-    public @ResponseBody ResponseEntity<String> getById(@PathVariable String id) {
-        return new ResponseEntity<String>("GET Response : " + id, HttpStatus.OK);
+    @GetMapping("/get/{code}")
+    public @ResponseBody ResponseEntity<String> getByCode(@PathVariable String code) {
+        return new ResponseEntity<String>("GET Response : " + code, HttpStatus.OK);
     }
 
     @PostMapping("/post")
