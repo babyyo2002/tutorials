@@ -12,23 +12,23 @@
 	<form:form method="POST" action="/spring-mvc-basics/addInvoice" modelAttribute="invoice">
 		<table>
 			<tr>
-				<td><form:label path="code">Code</form:label></td>
+				<td><form:label path="code">Code: </form:label></td>
 				<td><form:input path="code" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="concept">Concept</form:label></td>
+				<td><form:label path="concept">Concept: </form:label></td>
 				<td><form:input path="concept" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="amount">Amount</form:label></td>
+				<td><form:label path="amount">Amount: </form:label></td>
 				<td><form:input path="amount" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="retention">Retention</form:label></td>
+				<td><form:label path="retention">Retention: </form:label></td>
 				<td><form:input path="retention" /></td>
 			</tr>
 			<tr>
-            	<td><form:label path="date">Date</form:label></td>
+            	<td><form:label path="date">Date (MM/dd/yyyy): </form:label></td>
             	<td><form:input path="date" type="text" /></td>
 
             </tr>
