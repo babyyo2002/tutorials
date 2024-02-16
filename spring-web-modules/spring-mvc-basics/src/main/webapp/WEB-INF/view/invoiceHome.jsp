@@ -29,7 +29,8 @@
 			</tr>
 			<tr>
             	<td><form:label path="date">Date</form:label></td>
-            	<td><form:input path="date" /></td>
+            	<td><form:input path="date" type="text" /></td>
+
             </tr>
 			<tr>
 				<td><input type="submit" value="Submit" /></td>
