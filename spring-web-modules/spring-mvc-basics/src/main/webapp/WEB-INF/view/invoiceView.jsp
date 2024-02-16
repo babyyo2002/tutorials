@@ -60,7 +60,7 @@
 		<tr>
 			<td>PaymentDate :</td>
 			<td><script>document.write(sumarMes('${fechaFormateada}'));</script></td>
-                    </tr>
+        </tr>
 	</table>
 </body>
 </html>
