@@ -1,8 +1,6 @@
 package com.baeldung.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 
 @XmlRootElement
@@ -19,7 +17,7 @@ public class Invoice {
     }
 
     public Invoice(final long code, final String concept, final double amount, final double retention, final Date date,
-                   final double amountTotal, final Date paymentDate) {
+                   final double amountTotal) {
         this.code = code;
         this.concept = concept;
         this.amount = amount;
@@ -67,29 +65,15 @@ public class Invoice {
         this.date = date;
     }
 
-    public Date getPaymentDate() {
-        return new Date();
-    }
 
     public double getAmountRet() {return (amount*retention)/100; }
     public double getAmountTotal() {return amount - getAmountRet(); }
 
 
-
-
-    public class Payment {
-        private LocalDate date;
-
-        public LocalDate getPaymentDate() {
-            return date.plusMonths(1);
-        }
-
-    }
-
     @Override
     public String toString() {
         return "Invoice [code=" + code + ", concept=" + concept + ", amount=" + amount + ", retention=" + retention + ", " +
-                "date=" + date + ", amountTotal=" + getAmountTotal() +", paymentDate=" + getPaymentDate() +"]";
+                "date=" + date + ", amountTotal=" + getAmountTotal() +"]";
     }
 
 }

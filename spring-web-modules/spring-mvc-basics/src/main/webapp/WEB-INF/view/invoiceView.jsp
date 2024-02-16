@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<fmt:formatDate value="${date}" pattern="dd/MM/yyyy" var="fechaFormateada"/>
-<fmt:formatDate value="${PaymentDate}" pattern="dd/MM/yyyy" var="PaymentDateFormat"/>
+<fmt:formatDate value="${date}" pattern="MM/dd/yyyy" var="fechaFormateada"/>
+
 <html>
 <head>
 <title>Spring MVC Form Handling</title>
@@ -37,12 +37,7 @@
 			<td>Total :</td>
 			<td>${amountTotal} €</td>
 		</tr>
-		<tr>
-			<td>PaymentDate :</td>
-			<td>${fechaFormateada}</td>
-		</tr>
 
 	</table>
-nextMonthDate
 </body>
 </html>

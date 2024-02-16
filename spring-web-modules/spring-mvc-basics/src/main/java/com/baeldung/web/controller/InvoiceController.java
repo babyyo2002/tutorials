@@ -19,10 +19,10 @@ public class InvoiceController {
     Map<Long, Invoice> invoiceMap = new HashMap<>();
 
     @ModelAttribute("invoice")
-    public void initEmployees() {
-        invoiceMap.put(1L, new Invoice(1L, "Patatas", 25, 5, new Date(124, 1, 25), 0, new Date(124, +1, 25)));
-        invoiceMap.put(2L, new Invoice(2L, "Tomates", 50, 10, new Date(124, 1, 26), 0, new Date(124, +1, 25)));
-        invoiceMap.put(3L, new Invoice(3L, "Peras", 10, 20, new Date(124, 1, 27), 0, new Date(124, +1, 25)));
+    public void initInvoice() {
+        invoiceMap.put(1L, new Invoice(1L, "Patatas", 25, 5, new Date(124, 1, 25), 0));
+        invoiceMap.put(2L, new Invoice(2L, "Tomates", 50, 10, new Date(124, 1, 26), 0));
+        invoiceMap.put(3L, new Invoice(3L, "Peras", 10, 20, new Date(124, 1, 27), 0));
     }
 
     @RequestMapping(value = "/invoice", method = RequestMethod.GET)
@@ -46,7 +46,6 @@ public class InvoiceController {
         model.addAttribute("retention", invoice.getRetention());
         model.addAttribute("date", invoice.getDate());
         model.addAttribute("amountTotal", invoice.getAmountTotal());
-        model.addAttribute("paymentDate", invoice.getPaymentDate());
 
         invoiceMap.put(invoice.getCode(), invoice);
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -29,10 +30,6 @@
 			<tr>
             	<td><form:label path="date">Date</form:label></td>
             	<td><form:input path="date" /></td>
-            </tr>
-			<tr>
-            	<td><form:label path="paymentDate">PaymentDate</form:label></td>
-            	<td><form:input path="paymentDate" /></td>
             </tr>
 			<tr>
 				<td><input type="submit" value="Submit" /></td>
