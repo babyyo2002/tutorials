@@ -22,9 +22,9 @@ public class InvoiceController {
 
     @ModelAttribute("invoice")
     public void initInvoice() {
-        invoiceMap.put(1L, new Invoice(1L, "Patatas", 25, 5, new Date(124, 1, 25), 0));
-        invoiceMap.put(2L, new Invoice(2L, "Tomates", 50, 10, new Date(124, 1, 26), 0));
-        invoiceMap.put(3L, new Invoice(3L, "Peras", 10, 20, new Date(124, 1, 27), 0));
+        invoiceMap.put(1L, new Invoice(125, "Patatas", 25, 5, new Date(124, 1, 25), 0));
+        invoiceMap.put(2L, new Invoice(126, "Tomates", 50, 10, new Date(124, 1, 26), 0));
+        invoiceMap.put(3L, new Invoice(127, "Peras", 10, 20, new Date(124, 1, 27), 0));
     }
 
     @RequestMapping(value = "/invoice", method = RequestMethod.GET)
@@ -40,9 +40,6 @@ public class InvoiceController {
     @RequestMapping(value = "/addInvoice", method = RequestMethod.POST)
     public String submit(@Valid @ModelAttribute("invoice") final Invoice invoice, final BindingResult result, final ModelMap model) {
         if (result.hasErrors()) {
-            Invoice newInvoice = (Invoice) model.getAttribute("invoice");
-            newInvoice.setDate(null); // Establecer la fecha como null
-            model.addAttribute("invoice", newInvoice);
             return "/invoiceHome";
         }
         model.addAttribute("code", invoice.getCode());

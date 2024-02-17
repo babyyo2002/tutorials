@@ -54,12 +54,13 @@
 		</tr>
 
 		<tr>
-			<td>Total :</td>
-			<td>${amountTotal} €</td>
+			<td><b>Total :</b></td>
+			<td style="color: #ff1493;"><b>${amountTotal} €</b></td>
+
 		</tr>
-		<tr>
-			<td>PaymentDate :</td>
-			<td><script>document.write(sumarMes('${fechaFormateada}'));</script></td>
+        <tr>
+            <td><b>PaymentDate :</b></td>
+            <td style="color: #ff1493;"><b><script>document.write(sumarMes('${fechaFormateada}'));</script></b></td>
         </tr>
 	</table>
 </body>

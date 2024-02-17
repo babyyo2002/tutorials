@@ -1,17 +1,24 @@
 package com.baeldung.model;
 
-import javax.validation.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.*;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 @XmlRootElement
 public class Invoice {
-
+    @NotNull(message = "Introduce un codigo")
+    @Min(value = 1, message = "{code.notblank}")
     private long code;
     @NotBlank(message = "{concep.notblank}")
     private String concept;
+    @DecimalMin(value = "0.1", message = "{amount.notnull}")
     private double amount;
     private double retention;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @NotNull(message = "{date.notempty}")
     private Date date;
 
     public Invoice() {

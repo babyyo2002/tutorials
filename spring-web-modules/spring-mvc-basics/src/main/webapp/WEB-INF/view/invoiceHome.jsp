@@ -15,6 +15,7 @@
 			<tr>
 				<td><form:label path="code">Code: </form:label></td>
 				<td><form:input path="code" /></td>
+				<td><form:errors path="code" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="concept">Concept: </form:label></td>
@@ -24,16 +25,19 @@
 			<tr>
 				<td><form:label path="amount">Amount: </form:label></td>
 				<td><form:input path="amount" /></td>
+				<td><form:errors path="amount" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="retention">Retention: </form:label></td>
 				<td><form:input path="retention" /></td>
 			</tr>
 			<tr>
-            	<td><form:label path="date">Date (MM/dd/yyyy): </form:label></td>
-            	<td><form:input path="date" type="text" /></td>
+            	<td><form:label path="date">Date: </form:label></td>
+            	<td><form:input path="date" type="date" /></td>
+            	<td><form:errors path="date" cssClass="error" /></td>
 
             </tr>
+
 			<tr>
 				<td><input type="submit" value="Submit" /></td>
 			</tr>
