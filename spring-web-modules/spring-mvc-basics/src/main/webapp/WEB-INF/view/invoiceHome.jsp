@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Form Example - Register an Invoice</title>
+
 </head>
 <body>
 	<h3>Welcome, Enter The Invoice Details</h3>
@@ -18,6 +19,7 @@
 			<tr>
 				<td><form:label path="concept">Concept: </form:label></td>
 				<td><form:input path="concept" /></td>
+				<td><form:errors path="concept" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="amount">Amount: </form:label></td>

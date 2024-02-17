@@ -14,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.baeldung.model.Invoice;
 
+import javax.validation.Valid;
+
 @Controller
 public class InvoiceController {
     Map<Long, Invoice> invoiceMap = new HashMap<>();
@@ -36,9 +38,12 @@ public class InvoiceController {
     }
 
     @RequestMapping(value = "/addInvoice", method = RequestMethod.POST)
-    public String submit(@ModelAttribute("invoice") final Invoice invoice, final BindingResult result, final ModelMap model) {
+    public String submit(@Valid @ModelAttribute("invoice") final Invoice invoice, final BindingResult result, final ModelMap model) {
         if (result.hasErrors()) {
-            return "error";
+            Invoice newInvoice = (Invoice) model.getAttribute("invoice");
+            newInvoice.setDate(null); // Establecer la fecha como null
+            model.addAttribute("invoice", newInvoice);
+            return "/invoiceHome";
         }
         model.addAttribute("code", invoice.getCode());
         model.addAttribute("concept", invoice.getConcept());
@@ -47,7 +52,7 @@ public class InvoiceController {
         model.addAttribute("date", invoice.getDate());
         model.addAttribute("amountTotal", invoice.getAmountTotal());
 
-        invoiceMap.put(invoice.getCode(), invoice);
+        //invoiceMap.put(invoice.getCode(), invoice);
 
         return "invoiceView";
     }

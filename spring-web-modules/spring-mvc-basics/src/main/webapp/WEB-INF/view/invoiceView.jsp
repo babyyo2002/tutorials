@@ -46,7 +46,7 @@
 		</tr>
 		<tr>
 			<td>Retention :</td>
-			<td>${retention} €</td>
+			<td>${retention} %</td>
 		</tr>
 		<tr>
 			<td>Date :</td>

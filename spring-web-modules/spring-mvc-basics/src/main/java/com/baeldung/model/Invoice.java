@@ -1,5 +1,6 @@
 package com.baeldung.model;
 
+import javax.validation.constraints.NotBlank;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
@@ -7,6 +8,7 @@ import java.util.Date;
 public class Invoice {
 
     private long code;
+    @NotBlank(message = "{concep.notblank}")
     private String concept;
     private double amount;
     private double retention;
