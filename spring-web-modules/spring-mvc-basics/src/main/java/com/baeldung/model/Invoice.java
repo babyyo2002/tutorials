@@ -1,7 +1,6 @@
 package com.baeldung.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.*;
 
 import javax.xml.bind.annotation.XmlRootElement;
